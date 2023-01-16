@@ -1,0 +1,13 @@
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\bin\Debug\netcoreapp3.1\ProjetVersion_XML.exe
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\bin\Debug\netcoreapp3.1\ProjetVersion_XML.deps.json
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\bin\Debug\netcoreapp3.1\ProjetVersion_XML.runtimeconfig.json
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\bin\Debug\netcoreapp3.1\ProjetVersion_XML.runtimeconfig.dev.json
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\bin\Debug\netcoreapp3.1\ProjetVersion_XML.dll
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\bin\Debug\netcoreapp3.1\ProjetVersion_XML.pdb
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.csprojAssemblyReference.cache
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.AssemblyInfoInputs.cache
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.AssemblyInfo.cs
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.csproj.CoreCompileInputs.cache
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.dll
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.pdb
+C:\Users\gaeta\Desktop\Fun\avec xml\ProjetVersion_XML\ProjetVersion_XML\obj\Debug\netcoreapp3.1\ProjetVersion_XML.genruntimeconfig.cache
