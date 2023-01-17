@@ -3,24 +3,22 @@ using System.Xml.Serialization;
 
 namespace TestImportXml
 {
-    [XmlRoot(ElementName = "description")]
-	public class Description
-	{
-		[XmlAttribute(AttributeName = "country")]
+	[XmlRoot(ElementName="description")]
+	public class Description {
+		[XmlAttribute(AttributeName="country")]
 		public string Country { get; set; }
-		[XmlAttribute(AttributeName = "language")]
+		[XmlAttribute(AttributeName="language")]
 		public string Language { get; set; }
-		[XmlAttribute(AttributeName = "variant")]
+		[XmlAttribute(AttributeName="variant")]
 		public string Variant { get; set; }
 		[XmlText]
 		public string Text { get; set; }
 	}
 
-	[XmlRoot(ElementName = "descriptions")]
-	public class Descriptions
-	{
-		[XmlElement(ElementName = "description")]
-		public Description Description { get; set; }
+	[XmlRoot(ElementName="descriptions")]
+	public class Descriptions {
+		[XmlElement(ElementName="description")]
+		public List<Description> Description { get; set; }
 	}
 
 	[XmlRoot(ElementName = "values")]
@@ -200,9 +198,77 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "importExportMetadata")]
 		public ImportExportMetadata ImportExportMetadata { get; set; }
+		
 		[XmlElement(ElementName = "standardSalesItem")]
 		public List<StandardSalesItem> StandardSalesItem { get; set; }
+
 		[XmlAttribute(AttributeName = "xsi", Namespace = "http://www.w3.org/2000/xmlns/")]
 		public string Xsi { get; set; }
+	}
+	
+	[XmlRoot(ElementName="rmo")]
+	public class Rmo {
+		[XmlAttribute(AttributeName="name")]
+		public string Name { get; set; }
+		[XmlAttribute(AttributeName="workspace")]
+		public string Workspace { get; set; }
+	}
+	
+	[XmlRoot(ElementName="businessValue")]
+	public class BusinessValue 
+	{
+		[XmlElement(ElementName="descriptions")]
+		public Descriptions Descriptions { get; set; }
+		[XmlAttribute(AttributeName="name")]
+		public string Name { get; set; }
+		[XmlAttribute(AttributeName="workspace")]
+		public string Workspace { get; set; }
+	}
+	
+	[XmlRoot(ElementName="productCollection")]
+	public class ProductCollection 
+	{
+		[XmlElement(ElementName="descriptions")]
+		public Descriptions Descriptions { get; set; }
+		[XmlElement(ElementName="links")]
+		public Links Links { get; set; }
+		[XmlElement(ElementName="labelLinks")]
+		public string LabelLinks { get; set; }
+		[XmlElement(ElementName="labels")]
+		public string Labels { get; set; }
+		[XmlElement(ElementName="naLinks")]
+		public string NaLinks { get; set; }
+		[XmlElement(ElementName="searchBpss")]
+		public string SearchBpss { get; set; }
+		[XmlElement(ElementName="teaserLinks")]
+		public string TeaserLinks { get; set; }
+		[XmlAttribute(AttributeName="isRoot")]
+		public string IsRoot { get; set; }
+		[XmlAttribute(AttributeName="name")]
+		public string Name { get; set; }
+		[XmlAttribute(AttributeName="workspace")]
+		public string Workspace { get; set; }
+		[XmlElement(ElementName="collectionLinks")]
+		public CollectionLinks CollectionLinks { get; set; }
+		[XmlElement(ElementName="businessPropertySets")]
+		public BusinessPropertySets BusinessPropertySets { get; set; }
+		[XmlElement(ElementName="rmo")]
+		public Rmo Rmo { get; set; }
+	}
+	
+	[XmlRoot(ElementName="collectionLink")]
+	public class CollectionLink 
+	{
+		[XmlElement(ElementName="child")]
+		public Child Child { get; set; }
+		[XmlAttribute(AttributeName="seqOrder")]
+		public string SeqOrder { get; set; }
+	}
+
+	[XmlRoot(ElementName="collectionLinks")]
+	public class CollectionLinks 
+	{
+		[XmlElement(ElementName="collectionLink")]
+		public List<CollectionLink> CollectionLink { get; set; }
 	}
 }
