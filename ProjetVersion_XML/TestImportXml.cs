@@ -102,7 +102,7 @@ namespace TestImportXml
 		[XmlElement(ElementName = "bpsValuesList")]
 		public BpsValuesList BpsValuesList { get; set; }
 		[XmlAttribute(AttributeName="type", Namespace = "http://www.w3.org/2001/XMLSchema-instance")] 
-		public string Type { get; set; } 
+		public string Type { get; set; }
 	}
 
 	[XmlRoot(ElementName = "bpsValues")]
@@ -207,13 +207,17 @@ namespace TestImportXml
 		[XmlElement(ElementName = "businessValue")]
 		public List<BusinessValue> BusinessValue { get; set; }
 
+		/*
+		[XmlElement(ElementName = "productCollection")]
+		public List<ProductCollection> ProductCollection { get; set; }
 		
-		//[XmlElement(ElementName = "productCollection")]
-		//public List<ProductCollection> ProductCollection { get; set; }
 		
-		
-		[XmlAttribute(AttributeName = "xsi", Namespace = "http://www.w3.org/2000/xmlns/")]
+		[XmlAttribute(AttributeName="xsi", Namespace="http://www.w3.org/2000/xmlns/")]
 		public string Xsi { get; set; }
+		[XmlAttribute(AttributeName="xsd", Namespace="http://www.w3.org/2000/xmlns/")]
+		public string Xsd { get; set; }
+		
+		*/
 	}
 	
 	[XmlRoot(ElementName="rmo")]
