@@ -4,7 +4,8 @@ using System.Xml.Serialization;
 namespace TestImportXml
 {
 	[XmlRoot(ElementName="description")]
-	public class Description {
+	public class Description 
+	{
 		[XmlAttribute(AttributeName="country")]
 		public string Country { get; set; }
 		[XmlAttribute(AttributeName="language")]
@@ -16,7 +17,8 @@ namespace TestImportXml
 	}
 
 	[XmlRoot(ElementName="descriptions")]
-	public class Descriptions {
+	public class Descriptions 
+	{
 		[XmlElement(ElementName="description")]
 		public List<Description> Description { get; set; }
 	}
@@ -221,7 +223,8 @@ namespace TestImportXml
 	}
 	
 	[XmlRoot(ElementName="rmo")]
-	public class Rmo {
+	public class Rmo 
+	{
 		[XmlAttribute(AttributeName="name")]
 		public string Name { get; set; }
 		[XmlAttribute(AttributeName="workspace")]

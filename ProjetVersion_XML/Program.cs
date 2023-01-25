@@ -62,7 +62,9 @@ namespace ProjetVersion_XML
             };
             */
             
-            AddLink.NewLinkLigne(objt);
+            //AddLink.NewLinkLigne(objt);
+            
+            AddSalesItem.NewSaleItem(objt);
             
             using System.IO.StreamWriter writer = new System.IO.StreamWriter(@"C:\Users\gaeta\Desktop\Fun\empty.xml");
             xmlSerializer.Serialize(writer, objt);

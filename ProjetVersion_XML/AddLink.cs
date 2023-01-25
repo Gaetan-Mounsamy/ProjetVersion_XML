@@ -10,7 +10,7 @@ namespace ProjetVersion_XML
     {
         public static void NewLinkLigne(Export objt)
         {
-            var targetStandardSalesItem = objt.StandardSalesItem.First(x => x.Name == "594-G1-TDG");
+            var targetStandardSalesItem = objt.StandardSalesItem.First(x => x.Name == "4269");
             int targetLenght = targetStandardSalesItem.Links.Link.Count;
             var newLink = new Link()
             {
@@ -30,9 +30,7 @@ namespace ProjetVersion_XML
                     Workspace = "wksHenner"
                 },
             };
-            //Array.Resize(ref targetStandardSalesItem, targetLenght + 1);
             targetStandardSalesItem.Links.Link.AddRange(new[] { newLink });
-            //targetStandardSalesItem.Links.Link[targetLenght - 1] = newLink;
         }
     }
 }
