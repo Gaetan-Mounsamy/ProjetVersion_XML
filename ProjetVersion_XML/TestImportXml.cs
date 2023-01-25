@@ -53,17 +53,18 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "businessProperties")]
 		public BusinessProperties BusinessProperties { get; set; }
+		
 		[XmlAttribute(AttributeName = "name")]
 		public string Name { get; set; }
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
 	}
 
-	[XmlRoot(ElementName = "businessPropertySets")]
-	public class BusinessPropertySets
+	[XmlRoot(ElementName="businessPropertySets")]
+	public class BusinessPropertySets 
 	{
-		[XmlElement(ElementName = "businessPropertySet")]
-		public BusinessPropertySet BusinessPropertySet { get; set; }
+		[XmlElement(ElementName="businessPropertySet")]
+		public List<BusinessPropertySet> BusinessPropertySet { get; set; }
 	}
 
 	[XmlRoot(ElementName = "child")]

@@ -6,19 +6,22 @@ namespace ProjetVersion_XML
 {
     public class AddBusinessPropertySet
     {
-        public static void NewBusinessPropSet(Export objt)
+        public static void NewBP(Export objt)
         {
             var targetStandardSalesItem = objt.StandardSalesItem.First(x => x.Name == "4269");
+            
+            var path = targetStandardSalesItem.BusinessPropertySets.BusinessPropertySet;
+                
             var businessPropSet = new BusinessPropertySet()
             {
-                Name = "BpsPrestations",
+                Name = "bpsDescriptionOffreMetier",
                 Workspace = "wksHenner",
                 BusinessProperties = new BusinessProperties()
                 {
-                            
+                    BusinessProperty = new List<BusinessProperty>()
                 }
             };
-            //targetStandardSalesItem.BusinessPropertySets.BusinessPropertySet.AddRange(new[] { businessPropSet });
+            path.AddRange(new[] { businessPropSet });
             
         }
     }

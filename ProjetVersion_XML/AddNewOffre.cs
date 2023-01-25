@@ -4,9 +4,9 @@ using TestImportXml;
 
 namespace ProjetVersion_XML
 {
-    public class AddSalesItem
+    public class AddNewOffre
     {
-        public static void NewSaleItem(Export objt)
+        public static void NewOffre(Export objt)
         {
             int targetLenght = objt.StandardSalesItem.Count;
             var salesItem = new StandardSalesItem()
@@ -20,23 +20,11 @@ namespace ProjetVersion_XML
                 {
                     Description = new List<Description>()
                 },
-               
+                
                 
                 BusinessPropertySets = new BusinessPropertySets()
                 {
                     BusinessPropertySet = new List<BusinessPropertySet>()
-                    {
-                        new BusinessPropertySet()
-                        {
-                            Name = "",
-                            Workspace = "wksHenner",
-                            BusinessProperties = new BusinessProperties()
-                            {
-                                BusinessProperty = new List<BusinessProperty>()
-                            }
-                        }
-                    },
-                    
                 },
                 
                 Sparepartsviews = new Sparepartsviews()
@@ -46,9 +34,8 @@ namespace ProjetVersion_XML
             };
             objt.StandardSalesItem.AddRange(new[] { salesItem });
             AddDescription.NewDescrip(objt);
-            //AddBusinessPropertySet.NewBP(objt);
+            AddBusinessPropertySet.NewBP(objt);
             AddBusinessProperty.NewBusinessProp(objt);
-
         }
     }
 }

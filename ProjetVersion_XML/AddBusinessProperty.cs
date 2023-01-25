@@ -9,18 +9,21 @@ namespace ProjetVersion_XML
         public static void NewBusinessProp(Export objt)
         {
             var targetStandardSalesItem = objt.StandardSalesItem.First(x => x.Name == "4269");
-            int targetLenght = targetStandardSalesItem.BusinessPropertySets.BusinessPropertySet.BusinessProperties.BusinessProperty.Count;
+            
+            var path = targetStandardSalesItem.BusinessPropertySets.BusinessPropertySet
+                .First(x => x.Name == "bpsDescriptionOffreMetier").BusinessProperties.BusinessProperty;
+            
+            int targetLenght = path.Count;
             var newProperty = new BusinessProperty()
             {
-                Name = "",
+                Name = "bpLibelleOffreCommerciale",
                 SeqOrder = (targetLenght).ToString(),
                 Values = new Values()
                 {
-                    Value = ""
+                    Value = "Coucou toi, enfin moi"
                 }
             };
-            targetStandardSalesItem.BusinessPropertySets.BusinessPropertySet.BusinessProperties.BusinessProperty
-                .AddRange(new[] { newProperty });
+            path.AddRange(new[] { newProperty });
         }
     }
 }
