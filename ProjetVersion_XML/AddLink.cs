@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -16,12 +17,31 @@ namespace ProjetVersion_XML
             {
                 Quantity = "1",
                 SeqOrder = (targetLenght).ToString(),
+                
+                BpsValuesList = new BpsValuesList()
+                {
+                    BpsValues = new BpsValues()
+                    {
+                        Name = "BpsGarantieTDG",
+                        Workspace = "wksHenner",
+                        
+                        BusinessProperties = new BusinessProperties()
+                        {
+                            BusinessProperty = new List<BusinessProperty>()
+                        }
+                        
+                    }
+                    
+                    
+                },
+                
                 Child = new Child()
                 {
                     Name = "MyNewProduct",
                     ObjectType = "SI",
                     Workspace = "wksHenner"
                 },
+                
                 ParameterIdent = new ParameterIdent()
                 {
                     Class = "ProductLink",
@@ -29,8 +49,12 @@ namespace ProjetVersion_XML
                     Name = "lienGarantiePrestation",
                     Workspace = "wksHenner"
                 },
+                
             };
+            
             targetStandardSalesItem.Links.Link.AddRange(new[] { newLink });
+            AddLinkBp.NewBusinessProp(objt);
+
         }
     }
 }

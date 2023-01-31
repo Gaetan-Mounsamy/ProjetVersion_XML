@@ -138,20 +138,28 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "descriptions")]
 		public Descriptions Descriptions { get; set; }
+		
 		[XmlElement(ElementName = "businessPropertySets")]
 		public BusinessPropertySets BusinessPropertySets { get; set; }
+		
 		[XmlElement(ElementName = "links")]
 		public Links Links { get; set; }
+		
 		[XmlElement(ElementName = "sparepartsviews")]
 		public Sparepartsviews Sparepartsviews { get; set; }
+		
 		[XmlElement(ElementName = "manufacturingLinks")]
-		public string ManufacturingLinks { get; set; }
+		public ManufacturingLinks ManufacturingLinks { get; set; }
+		
 		[XmlElement(ElementName = "routingLinks")]
-		public string RoutingLinks { get; set; }
+		public RoutingLinks RoutingLinks { get; set; }
+		
 		[XmlAttribute(AttributeName = "eligibility")]
 		public string Eligibility { get; set; }
+		
 		[XmlAttribute(AttributeName = "name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
 	}
@@ -289,4 +297,19 @@ namespace TestImportXml
 		[XmlElement(ElementName="collectionLink")]
 		public List<CollectionLink> CollectionLink { get; set; }
 	}
+	
+	[XmlRoot(ElementName = "manufacturingLinks")]
+	public class ManufacturingLinks
+	{
+		[XmlElement(ElementName = "manufacturingLinks")]
+		public ManufacturingLinks ManufacturingLink { get; set; }
+	}
+	
+	[XmlRoot(ElementName = "routingLinks")]
+	public class RoutingLinks
+	{
+		[XmlElement(ElementName = "routingLinks")]
+		public RoutingLinks RoutingLink { get; set; }
+	}
+	
 }
