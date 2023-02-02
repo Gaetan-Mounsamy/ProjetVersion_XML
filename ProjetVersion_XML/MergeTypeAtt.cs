@@ -34,9 +34,13 @@ namespace ProjetVersion_XML
            
             foreach (XmlNode node in nodes)
             {
-                XmlAttribute attribute = doc.CreateAttribute("mergeType");
-                attribute.Value = "IGNORE";
-                node.Attributes.Append(attribute);
+                if (node.Attributes.Count != 0)
+                {
+                    XmlAttribute attribute = doc.CreateAttribute("mergeType");
+                    attribute.Value = "IGNORE";
+                    node.Attributes.Append(attribute);
+                }
+                
             }
             
             doc.Save(@"C:\Users\gaeta\Desktop\Fun\newbite.xml");
