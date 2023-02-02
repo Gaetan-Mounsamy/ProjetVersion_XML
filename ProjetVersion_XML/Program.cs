@@ -23,7 +23,7 @@ namespace ProjetVersion_XML
             var watch = Stopwatch.StartNew();
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Export));
-            using System.IO.StreamReader streamReader = new System.IO.StreamReader(@"C:\Users\gaeta\Desktop\Fun\formattedFile.xml");
+            using System.IO.StreamReader streamReader = new System.IO.StreamReader(@"C:\Users\gaeta\Desktop\Fun\xml_file.xml");
 
             //Casting operation, permet de convertir le resultat de Deserialize
                 // Dans ce cas, la méthode Deserialize renvoie un objet, et cet objet est converti au type Export.
@@ -36,7 +36,9 @@ namespace ProjetVersion_XML
             watch.Stop();
             Console.WriteLine(watch.ElapsedMilliseconds);
 
-            var filtre = objt.StandardSalesItem.FirstOrDefault(x => x.Name == "594-G1-TDG");
+            var filtre = objt.StandardSalesItem.FirstOrDefault(x => x.Name == "601");
+            //if (filtre is null) Console.WriteLine("motherfucker");
+            var offrecomplete = objt.StandardSalesItem.Where(x => x.Name.Contains("596"));
             
             //AddSalesItem.NewSaleItem(objt);
             CreateNewOffre.NewOffre(objt);
@@ -45,7 +47,16 @@ namespace ProjetVersion_XML
             xmlSerializer.Serialize(writer, objt);
             
             //var verif = objt.StandardSalesItem.FirstOrDefault(x => x.Name == "594-G1-TDG");
+
+            var tentative = filtre.Links.Link.Where(x => x.ParameterIdent.Name == "lienOffreFormule");
             
+            List<string> formuleoffre = new List<string>();
+            foreach (var zelda in tentative)
+            {
+                formuleoffre.Add(zelda.Child.Name);
+            }
+            
+            MergeTypeAtt.NewOffre();
         }
     }
 }
