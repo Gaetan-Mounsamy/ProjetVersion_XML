@@ -13,17 +13,13 @@ namespace ProjetVersion_XML
     {
         static void Main(string[] args)
         {
+            string originPath = @"C:\Users\gaeta\Desktop\Fun\xml_file.xml";
+            MergeTypeAtt.NewOffre(originPath);
             
-                /*
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\\Users\gaeta\Desktop\Fun\xml_file.xml");
-            //XML_Format.DataForm(doc);
-                */
-
             var watch = Stopwatch.StartNew();
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Export));
-            using System.IO.StreamReader streamReader = new System.IO.StreamReader(@"C:\Users\gaeta\Desktop\Fun\xml_file.xml");
+            using System.IO.StreamReader streamReader = new System.IO.StreamReader(originPath);
 
             //Casting operation, permet de convertir le resultat de Deserialize
                 // Dans ce cas, la méthode Deserialize renvoie un objet, et cet objet est converti au type Export.
@@ -37,7 +33,6 @@ namespace ProjetVersion_XML
             Console.WriteLine(watch.ElapsedMilliseconds);
 
             var filtre = objt.StandardSalesItem.FirstOrDefault(x => x.Name == "601");
-            //if (filtre is null) Console.WriteLine("motherfucker");
             var offrecomplete = objt.StandardSalesItem.Where(x => x.Name.Contains("596"));
             
             //AddSalesItem.NewSaleItem(objt);
@@ -46,8 +41,6 @@ namespace ProjetVersion_XML
             using System.IO.StreamWriter writer = new System.IO.StreamWriter(@"C:\Users\gaeta\Desktop\Fun\empty.xml");
             xmlSerializer.Serialize(writer, objt);
             
-            //var verif = objt.StandardSalesItem.FirstOrDefault(x => x.Name == "594-G1-TDG");
-
             var tentative = filtre.Links.Link.Where(x => x.ParameterIdent.Name == "lienOffreFormule");
             
             List<string> formuleoffre = new List<string>();
@@ -56,7 +49,6 @@ namespace ProjetVersion_XML
                 formuleoffre.Add(zelda.Child.Name);
             }
             
-            MergeTypeAtt.NewOffre();
         }
     }
 }

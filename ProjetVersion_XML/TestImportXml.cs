@@ -14,6 +14,9 @@ namespace TestImportXml
 		public string Variant { get; set; }
 		[XmlText]
 		public string Text { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName="descriptions")]
@@ -37,8 +40,12 @@ namespace TestImportXml
 		public string SeqOrder { get; set; }
 		[XmlElement(ElementName = "values")]
 		public Values Values { get; set; }
+		
 		[XmlAttribute(AttributeName = "name")]
 		public string Name { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "businessProperties")]
@@ -56,8 +63,12 @@ namespace TestImportXml
 		
 		[XmlAttribute(AttributeName = "name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName="businessPropertySets")]
@@ -74,8 +85,12 @@ namespace TestImportXml
 		public string Name { get; set; }
 		[XmlAttribute(AttributeName = "objectType")]
 		public string ObjectType { get; set; }
+		
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "parameterIdent")]
@@ -83,12 +98,18 @@ namespace TestImportXml
 	{
 		[XmlAttribute(AttributeName = "class")]
 		public string Class { get; set; }
+		
 		[XmlAttribute(AttributeName = "parameterType")]
 		public string ParameterType { get; set; }
+		
 		[XmlAttribute(AttributeName = "name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "link")]
@@ -96,16 +117,24 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "child")]
 		public Child Child { get; set; }
+		
 		[XmlElement(ElementName = "parameterIdent")]
 		public ParameterIdent ParameterIdent { get; set; }
+		
 		[XmlAttribute(AttributeName = "quantity")]
 		public string Quantity { get; set; }
+		
 		[XmlAttribute(AttributeName = "seqOrder")]
 		public string SeqOrder { get; set; }
+		
 		[XmlElement(ElementName = "bpsValuesList")]
 		public BpsValuesList BpsValuesList { get; set; }
+		
 		[XmlAttribute(AttributeName="type", Namespace = "http://www.w3.org/2001/XMLSchema-instance")] 
 		public string Type { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "bpsValues")]
@@ -113,10 +142,15 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "businessProperties")]
 		public BusinessProperties BusinessProperties { get; set; }
+		
 		[XmlAttribute(AttributeName = "name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "bpsValuesList")]
@@ -162,6 +196,9 @@ namespace TestImportXml
 		
 		[XmlAttribute(AttributeName = "workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "sparepartsview")]
@@ -183,12 +220,18 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "exportDate")]
 		public string ExportDate { get; set; }
+		
 		[XmlElement(ElementName = "exportType")]
 		public string ExportType { get; set; }
+		
 		[XmlElement(ElementName = "version")]
 		public Version Version { get; set; }
+		
 		[XmlAttribute(AttributeName = "workspaceName")]
 		public string WorkspaceName { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "version")]
@@ -196,14 +239,21 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName = "fixNumber")]
 		public string FixNumber { get; set; }
+		
 		[XmlElement(ElementName = "versionDescr")]
 		public string VersionDescr { get; set; }
+		
 		[XmlElement(ElementName = "versionLabel")]
 		public string VersionLabel { get; set; }
+		
 		[XmlAttribute(AttributeName = "isWorking")]
 		public string IsWorking { get; set; }
+		
 		[XmlAttribute(AttributeName = "versionDate")]
 		public string VersionDate { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName = "export")]
@@ -236,8 +286,12 @@ namespace TestImportXml
 	{
 		[XmlAttribute(AttributeName="name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName="workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 	
 	[XmlRoot(ElementName="businessValue")]
@@ -245,10 +299,15 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName="descriptions")]
 		public Descriptions Descriptions { get; set; }
+		
 		[XmlAttribute(AttributeName="name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName="workspace")]
 		public string Workspace { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 	
 	[XmlRoot(ElementName="productCollection")]
@@ -256,30 +315,45 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName="descriptions")]
 		public Descriptions Descriptions { get; set; }
+		
 		[XmlElement(ElementName="links")]
 		public Links Links { get; set; }
+		
 		[XmlElement(ElementName="labelLinks")]
 		public string LabelLinks { get; set; }
+		
 		[XmlElement(ElementName="labels")]
 		public string Labels { get; set; }
+		
 		[XmlElement(ElementName="naLinks")]
 		public string NaLinks { get; set; }
+		
 		[XmlElement(ElementName="searchBpss")]
 		public string SearchBpss { get; set; }
+		
 		[XmlElement(ElementName="teaserLinks")]
 		public string TeaserLinks { get; set; }
+		
 		[XmlAttribute(AttributeName="isRoot")]
 		public string IsRoot { get; set; }
+		
 		[XmlAttribute(AttributeName="name")]
 		public string Name { get; set; }
+		
 		[XmlAttribute(AttributeName="workspace")]
 		public string Workspace { get; set; }
+		
 		[XmlElement(ElementName="collectionLinks")]
 		public CollectionLinks CollectionLinks { get; set; }
+		
 		[XmlElement(ElementName="businessPropertySets")]
 		public BusinessPropertySets BusinessPropertySets { get; set; }
+		
 		[XmlElement(ElementName="rmo")]
 		public Rmo Rmo { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 	
 	[XmlRoot(ElementName="collectionLink")]
@@ -287,8 +361,12 @@ namespace TestImportXml
 	{
 		[XmlElement(ElementName="child")]
 		public Child Child { get; set; }
+		
 		[XmlAttribute(AttributeName="seqOrder")]
 		public string SeqOrder { get; set; }
+		
+		[XmlAttribute(AttributeName="mergeType")]
+		public string MergeType { get; set; }
 	}
 
 	[XmlRoot(ElementName="collectionLinks")]

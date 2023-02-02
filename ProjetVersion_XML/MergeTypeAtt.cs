@@ -1,33 +1,16 @@
-﻿using System.Xml;
+﻿using System;
+using System.Xml;
 
 namespace ProjetVersion_XML
 {
     public class MergeTypeAtt
     {
-        public static void NewOffre()
+        //public static string NewOffre(string pathFile)
+        public static void NewOffre(string pathFile)
+
         {
-            /*
-            
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Users\gaeta\Desktop\Fun\596.xml");
-            
-           
-            foreach (XmlElement element in doc.DocumentElement.ChildNodes)
-            {
-                XmlAttribute mergeTypeAttribute = doc.CreateAttribute("mergeType");
-                mergeTypeAttribute.Value = "new";
-                element.Attributes.Append(mergeTypeAttribute);
-            }
-            
-            
-                   
-            XmlAttribute attr = doc.CreateAttribute("mergeType");
-            attr.Value = "";
-            doc.DocumentElement.SetAttributeNode(attr);
-            */
-            
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Users\gaeta\Desktop\Fun\596.xml");
+            doc.Load(pathFile);
             
             XmlNodeList nodes = doc.GetElementsByTagName("*");
 
@@ -36,14 +19,24 @@ namespace ProjetVersion_XML
             {
                 if (node.Attributes.Count != 0)
                 {
-                    XmlAttribute attribute = doc.CreateAttribute("mergeType");
-                    attribute.Value = "IGNORE";
-                    node.Attributes.Append(attribute);
+                    if ((node.Name == "importExportMetadata") || (node.Name == "export") || (node.Name == "version") )
+                    {
+
+                    }
+                    else
+                    {
+                        XmlAttribute attribute = doc.CreateAttribute("mergeType");
+                        attribute.Value = "IGNORE";
+                        node.Attributes.Append(attribute);
+                    }
                 }
                 
             }
             
-            doc.Save(@"C:\Users\gaeta\Desktop\Fun\newbite.xml");
+            doc.Save(pathFile);
+            //string newPath = @"C:\Users\gaeta\Desktop\Fun\newbite.xml";
+            //doc.Save(newPath);
+            //return newPath;
 
         }
     }
