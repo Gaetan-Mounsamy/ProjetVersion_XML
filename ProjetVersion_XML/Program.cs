@@ -14,7 +14,7 @@ namespace ProjetVersion_XML
         static void Main(string[] args)
         {
             string originPath = @"C:\Users\gaeta\Desktop\Fun\xml_file.xml";
-            MergeTypeAtt.NewOffre(originPath);
+            MergeTypeAtt.AddAttribute(originPath);
             
             var watch = Stopwatch.StartNew();
 

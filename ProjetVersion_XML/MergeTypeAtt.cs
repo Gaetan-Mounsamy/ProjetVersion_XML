@@ -6,7 +6,7 @@ namespace ProjetVersion_XML
     public class MergeTypeAtt
     {
         //public static string NewOffre(string pathFile)
-        public static void NewOffre(string pathFile)
+        public static void AddAttribute(string pathFile)
 
         {
             XmlDocument doc = new XmlDocument();
